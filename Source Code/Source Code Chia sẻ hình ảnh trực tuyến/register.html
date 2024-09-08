@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="data:image/png;base64,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" alt="Logo" style="height: 40px; margin-right: 10px;">
+            NCB
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Khám phá.html">Khám phá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Hình ảnh nổi bật.html">Hình ảnh nổi bật</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="login.html">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="login.html">Đăng hình ảnh</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Registration Form -->
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+        <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px; border-radius: 15px;">
+            <h1 class="text-center mb-3">Đăng ký</h1>
+            <h2 class="text-center text-muted mb-4" style="font-size: 1.25rem;">Tạo tài khoản mới</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">User Name:</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control">
+                </div>
+                <a href="login.html" class="btn btn-primary w-100">Đăng ký</a>
+            </form>
+            <p class="text-center mt-3">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+        </div>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: normal;
+            color: #6c757d;
+        }
+
+        form {
+            max-width: 100%;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            margin-bottom: 10px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+   
+        
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

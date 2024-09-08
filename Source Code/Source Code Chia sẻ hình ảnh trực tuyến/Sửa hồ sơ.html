@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa hồ sơ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(236, 9, 9, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .header .btn {
+            background-color: #f8f9fa;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin: 0 5px;
+            font-weight: bold;
+            text-decoration: none; 
+        }
+
+        .header .btn.active {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .header .btn.btn-home {
+            background-color: #f8f9fa; 
+            color: #333;
+        }
+
+        .header .btn.btn-success {
+            background-color: #fff; 
+            color: #000;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture {
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .profile-picture img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto; 
+        }
+
+        .change-pic-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block; 
+            margin-left: auto;
+            margin-right: auto; 
+        }
+
+        .change-pic-btn:hover {
+            background-color: #28a745;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #777;
+        }
+
+        .change-password-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .change-password-btn:hover {
+            background-color: #28a745;
+        }
+
+        .save-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .save-btn:hover {
+            background-color: #28a745;
+        }
+    </style>
+    <div class="profile-container">
+        <div class="header">
+            <a class="btn btn-success mt-2" href="index.html">Trang chủ</a>
+            <button class="btn active">Hồ sơ</button>
+            <a class="btn btn-success mt-2" href="#">Thông báo</a>
+        </div>
+
+        <h1>Chỉnh sửa hồ sơ</h1>
+
+        <div class="profile-picture">
+            <img src="https://beedesign.com.vn/wp-content/uploads/2020/08/thiet-ke-logo-chu-b-brew.png" alt="Profile Picture">
+            <button class="btn change-pic-btn">Thay đổi hình ảnh</button>
+        </div>
+
+        <form action="update-profile" method="POST">
+            <div class="form-group">
+                <label for="first-name">Tên *</label>
+                <input type="text" id="first-name" name="first-name" value="Bình">
+            </div>
+
+            <div class="form-group">
+                <label for="last-name">Họ *</label>
+                <input type="text" id="last-name" name="last-name" value="Nguyễn Công">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" value="21T1020251@husc.edu.vn">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Ngày sinh</label>
+                <input type="number" id="day" name="day" placeholder="Ngày" min="1" max="31" value="24">        
+                <input type="number" id="month" name="month" placeholder="Tháng" min="1" max="12" value="08">
+                <input type="number" id="year" name="year" placeholder="Năm" min="1900" max="2099" value="2002">
+            </div>
+
+            <div class="form-group">
+                <label for="Phone-Number">Số điện thoại</label>
+                <input type="tel" id="Phone-Number" name="Phone-Number" value="0123456789">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <a href="Đổi mật khẩu.html" class="btn change-password-btn">Thay đổi mật khẩu</a>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Giới thiệu về bạn</label>
+                <textarea id="bio" name="bio" rows="5"></textarea>
+                <small>Mô tả về bản thân để mọi người hiểu rõ về bạn.</small>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn save-btn">Lưu thay đổi</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

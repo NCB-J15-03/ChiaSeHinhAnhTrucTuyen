@@ -1,0 +1,378 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 50px; 
+    padding: 0 15px; 
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    line-height: 35px; 
+}
+
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1676649650375-9ae0467ccc06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.hero .search-bar {
+    margin-top: 20px;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.masonry-layout .card {
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.masonry-layout .card img {
+    border-radius: 10px;
+}
+
+.bg-dark p {
+    margin: 0;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.notification-content {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-content strong {
+    margin-bottom: 16px; 
+}
+
+.notification-content img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.notification-content p {
+    margin-bottom: 10px; 
+}
+
+.dropdown-custom {
+    margin-top: 20px; 
+}
+
+/*-------------------------*/
+
+.masonry-layout .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.masonry-layout .card img {
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+}
+
+
+.favorite-icon,
+.save-icon,
+.share-icon,
+.message-icon, 
+.user-info,
+.download-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Show icons, avatar, username, and download button on hover */
+.masonry-layout .card:hover .favorite-icon,
+.masonry-layout .card:hover .save-icon,
+.masonry-layout .card:hover .share-icon,
+.masonry-layout .card:hover .message-icon, 
+.masonry-layout .card:hover .user-info,
+.masonry-layout .card:hover .download-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.favorite-icon, 
+.save-icon, 
+.share-icon,
+.message-icon { 
+    position: absolute;
+    top: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+
+.favorite-icon {
+    right: 140px; 
+}
+
+.save-icon {
+    right: 100px; 
+}
+
+.share-icon {
+    right: 60px;
+}
+
+.message-icon {
+    right: 20px; 
+}
+
+
+.download-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 5px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: auto;
+}
+
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+
+.username {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    margin: 0;
+}
+
+
+.user-info .avatar-link {
+    display: inline-block; 
+}
+
+.user-info .avatar-link img {
+    display: block; 
+}
+
+
+.collections-grid {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.collection-item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.collection-item.create-new {
+    background-color: #fff;
+    border: 2px solid #ddd;
+}
+
+.collection-item.create-new:hover {
+    background-color: #fff;
+}
+
+.collection-item.my-collection .icon-plus {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.collection-item.my-collection:hover .icon-plus {
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #000;
+}
+
+.collection-item.my-collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collection-label {
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.btn-collection {
+    background-color: #000; 
+    color: #fff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    border: none; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block; 
+    text-align: center; 
+}
+
+
+.btn-collection:hover {
+    background-color: #333 !important; 
+    color: #fff; 
+}
+
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-size: 18px;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+.social-share-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-share-list li {
+    margin-bottom: 10px;
+}
+
+.social-share-link {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.social-share-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.social-share-link:hover {
+    color: #007bff;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.twitter {
+    color: #1da1f2;
+}
+
+.zalo {
+    color: #00b0ff;
+}
+
+.instagram {
+    color: #e1306c;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group .form-control {
+    border-radius: 0;
+}
+
+.input-group .btn-outline-secondary {
+    border-radius: 0;
+}
+
+#copyButton i {
+    font-size: 16px;
+}
+
